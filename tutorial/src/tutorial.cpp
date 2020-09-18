@@ -1,8 +1,8 @@
      #include <ros/ros.h>
-   2 #include <geometry_msgs/Twist.h>
-   3 #include <sensor_msgs/Joy.h>
+     #include <geometry_msgs/Twist.h>
+     #include <sensor_msgs/Joy.h>
    4 
-   5 
+   5/* 
    6 class Tutorial
    7 {
    8 public:
@@ -55,3 +55,22 @@
   55 
   56   ros::spin();
   57 }
+  */
+ int main(argc, argc, "tutorial")
+ {
+ ros::NodeHandle n;
+ ros::publisher tutorialPub = n.advertise<geometry_msgs::Twist>("coordinates", 100);
+ ros::Rate loops_rate(10);
+ int count = 0;
+ while(ros::ok())
+ {
+   geometry_msgs::Twist twist;
+   twist.angular.z = 100*joy->axes[angular_];
+   twist.linear.x = 100*joy->axes[linear_];
+   tutorialPub.publish(twist);
+   ros::spinOnce();
+   loop_rate.sleep();
+   ++count;
+ }
+ return 0;
+ }
