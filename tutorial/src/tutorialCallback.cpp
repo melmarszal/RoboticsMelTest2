@@ -4,7 +4,7 @@
 #include <ros/console.h>
 void tutorialCallback(const sensor_msgs::Joy::ConstPtr& joy)
 {
-cout << 100*(joy->axes[2]);
+cout << 100*(joy->axes[1] + " "+ 100*(joy->axes[2]);
 }
 int main(int argc, char **argv)
 {
