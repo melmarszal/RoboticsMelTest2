@@ -1,5 +1,5 @@
 <launch>
-<node name="tutoiralCallback" pkg="tutorial" type="tutorialCallback.cpp" output = "screen">
+<node name="tutoiralCallback" pkg="tutorial" type="tutorial.cpp">
   </node>
 <node respawn="true" pkg="joy" type="joy_node" name="joyNode">
     <param name="dev" type="string" value="/dev/input/js0" />
